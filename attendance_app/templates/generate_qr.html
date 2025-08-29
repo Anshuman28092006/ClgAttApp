@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Generate QR Code</h2>
+<form method="POST">
+    <button type="submit" class="btn btn-primary">Generate Dynamic QR</button>
+</form>
+{% if qr_data %}
+<div class="mt-3 text-center">
+    <img src="data:image/png;base64,{{ qr_data }}" alt="QR Code">
+    <p>QR for Class ID: {{ class_id }} (Valid 3 mins)</p>
+</div>
+{% endif %}
+{% endblock %}

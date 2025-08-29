@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Student Dashboard</h2>
+<a href="{{ url_for('scan_qr') }}" class="btn btn-primary mb-3">Scan QR</a>
+<h3>Attendance Tracker: {{ percentage }}%</h3>
+<div class="progress mb-3">
+    <div class="progress-bar" style="width: {{ percentage }}%;"></div>
+</div>
+<h3>Calendar</h3>
+<ul class="list-group">
+    {% for day in calendar_data %}
+    <li class="list-group-item">{{ day.date }}: {{ day.status }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

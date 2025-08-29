@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Scan QR</h2>
+<p>Enter scanned QR content (simulate for demo):</p>
+<form method="POST">
+    <input type="text" name="scanned_qr" class="form-control mb-3" required>
+    <button type="submit" class="btn btn-primary">Submit Scan</button>
+</form>
+<button onclick="getLocation()" class="btn btn-secondary mt-2">Check Geofence</button>
+<p id="geo-status"></p>
+{% endblock %}

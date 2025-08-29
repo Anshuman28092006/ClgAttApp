@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Faculty Dashboard</h2>
+<a href="{{ url_for('generate_qr') }}" class="btn btn-success mb-3">Generate QR for Class</a>
+<h3>Attendance Data</h3>
+<table class="table table-striped">
+    <thead>
+        <tr><th>Student</th><th>Date</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+        {% for item in attendance_data %}
+        <tr><td>{{ item.student }}</td><td>{{ item.date }}</td><td>{{ item.status }}</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
